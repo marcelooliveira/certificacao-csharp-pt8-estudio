@@ -5,7 +5,7 @@ namespace Listings
 {
     class Item_00 //Streams
     {
-        static void Main(string[] args)
+        static void XMain(string[] args)
         {
             //TAREFAS:
             //1. ABRIR O ARQUIVO Diretores.txt
