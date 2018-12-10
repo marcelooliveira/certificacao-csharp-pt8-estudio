@@ -2,12 +2,47 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="02 Web\**" />
+    <Compile Remove="03 Async\**" />
+    <Compile Remove="04 Banco de Dados\**" />
+    <Compile Remove="05 JSON e XML\**" />
+    <Compile Remove="06 Serviços Web\**" />
+    <EmbeddedResource Remove="02 Web\**" />
+    <EmbeddedResource Remove="03 Async\**" />
+    <EmbeddedResource Remove="04 Banco de Dados\**" />
+    <EmbeddedResource Remove="05 JSON e XML\**" />
+    <EmbeddedResource Remove="06 Serviços Web\**" />
+    <None Remove="02 Web\**" />
+    <None Remove="03 Async\**" />
+    <None Remove="04 Banco de Dados\**" />
+    <None Remove="05 JSON e XML\**" />
+    <None Remove="06 Serviços Web\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="01 Sistema de Arquivos\Item_01.cs" />
+    <Compile Remove="01 Sistema de Arquivos\Item_02.cs" />
+    <Compile Remove="01 Sistema de Arquivos\Item_03.cs" />
+    <Compile Remove="01 Sistema de Arquivos\Item_04.cs" />
+    <Compile Remove="01 Sistema de Arquivos\Item_05.cs" />
+    <Compile Remove="01 Sistema de Arquivos\Item_06.cs" />
+    <Compile Remove="01 Sistema de Arquivos\Item_07.cs" />
+    <Compile Remove="01 Sistema de Arquivos\Item_08.cs" />
+    <Compile Remove="01 Sistema de Arquivos\Item_09.cs" />
+    <Compile Remove="01 Sistema de Arquivos\Item_10.cs" />
+    <Compile Remove="01 Sistema de Arquivos\Item_11.cs" />
+    <Compile Remove="01 Sistema de Arquivos\Item_12.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove=".gitignore" />
+    <None Remove="appsettingjson.json" />
+    <None Remove="Cinema.sql" />
     <None Remove="Diretores.txt" />
   </ItemGroup>
 
