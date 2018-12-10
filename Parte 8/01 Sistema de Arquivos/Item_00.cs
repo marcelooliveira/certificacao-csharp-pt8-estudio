@@ -19,6 +19,22 @@ namespace Listings
             int posicao = 0;
             int tamanho = 10;
 
+            //PRIMEIRA LEITURA
+            fluxoDeArquivo.Read(array, posicao, tamanho);
+
+            foreach (var caractere in array)
+            {
+                Console.Write((char)caractere);
+            }
+
+            //SALTO RELATIVO: RELATIVO À POSIÇÃO ATUAL
+            //SALTO ABSOLUTO: RELATIVO À POSIÇÃO INICIAL DO ARQUIVO
+
+            fluxoDeArquivo.Seek(5, SeekOrigin.Begin);
+
+            fluxoDeArquivo.Position = 5;
+
+            //SEGUNDA LEITURA
             fluxoDeArquivo.Read(array, posicao, tamanho);
 
             foreach (var caractere in array)
