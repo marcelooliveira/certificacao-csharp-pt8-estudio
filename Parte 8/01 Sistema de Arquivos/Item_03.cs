@@ -9,17 +9,10 @@ namespace Listings
     {
         static void XMain(string[] args)
         {
-            using (StreamWriter fluxoGravacao = new StreamWriter("ArquivoSaida.txt"))
-            {
-                fluxoGravacao.Write("Olá, Alura!");
-            }
+            //TAREFA: Usar FileStream dá muito trabalho...
+            //        Não podemos usar algo mais simples??
 
-            using (StreamReader fluxoLeitura = new StreamReader("ArquivoSaida.txt"))
-            {
-                string texto = fluxoLeitura.ReadToEnd();
-                Console.WriteLine("Texto lido: {0}", texto);
-            }
-            Console.ReadKey();
+
         }
     }
 }

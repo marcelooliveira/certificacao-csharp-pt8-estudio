@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="01 Sistema de Arquivos\Item_03.cs" />
     <Compile Remove="01 Sistema de Arquivos\Item_04.cs" />
     <Compile Remove="01 Sistema de Arquivos\Item_05.cs" />
     <Compile Remove="01 Sistema de Arquivos\Item_06.cs" />
