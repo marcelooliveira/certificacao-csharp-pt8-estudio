@@ -8,19 +8,39 @@ namespace Listings
 {
     class Item_04 //Trabalhando com arquivos comprimidos
     {
-        static void XMain(string[] args)
+        static void Main(string[] args)
         {
-            using (StreamWriter gravadorFluxo = new StreamWriter("ArquivoSaida.txt"))
+            //TAREFA: USAR ARQUIVO COMPACTADO Texto.zip NO LUGAR
+            //DO ArquivoSaida.txt
+
+            using (FileStream fluxoArquivo = new FileStream("Texto.zip", FileMode.OpenOrCreate, FileAccess.Write))
             {
-                gravadorFluxo.Write("Olá, Alura! (gravado com StreamWriter)");
+                using (GZipStream compactador = new GZipStream(fluxoArquivo, CompressionMode.Compress))
+                {
+                    using (StreamWriter gravadorFluxo = new StreamWriter(compactador))
+                    {
+                        gravadorFluxo.Write("Olá, Alura! (gravado com StreamWriter)");
+                    }
+                }
             }
 
-            using (StreamReader leitorFluxo = new StreamReader("ArquivoSaida.txt"))
+            using (FileStream fluxoArquivo = new FileStream("Texto.zip", FileMode.Open, FileAccess.Read))
             {
-                string textoLido = leitorFluxo.ReadToEnd();
-                Console.WriteLine("Texto lido: {0}", textoLido);
-                Console.ReadKey();
+                using (GZipStream descompactador = new GZipStream(fluxoArquivo, CompressionMode.Decompress))
+                {
+                    using (StreamReader leitorFluxo = new StreamReader(descompactador))
+                    {
+                        string textoLido = leitorFluxo.ReadToEnd();
+                        Console.WriteLine("Texto lido: {0}", textoLido);
+                        Console.ReadKey();
+                    }
+                }
+
+
             }
+
+
+
         }
     }
 }
