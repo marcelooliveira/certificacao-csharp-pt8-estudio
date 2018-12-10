@@ -20,6 +20,20 @@ namespace Listings
             int tamanho = mensagemSaida.Length;
             fluxoSaida.Write(array, posicao, tamanho);
             fluxoSaida.Close();
+
+            FileStream fluxoEntrada
+                = new FileStream("ArquivoSaida.txt",
+                    FileMode.Open, FileAccess.Read);
+
+            byte[] bytesLidos = new byte[fluxoEntrada.Length];
+
+            fluxoEntrada.Read(bytesLidos, posicao, (int)fluxoEntrada.Length);
+            string texto = Encoding.UTF8.GetString(bytesLidos);
+            fluxoEntrada.Close();
+
+            Console.WriteLine("Mensagem Lida: " + texto);
+
+            Console.ReadKey();
         }
     }
 }
