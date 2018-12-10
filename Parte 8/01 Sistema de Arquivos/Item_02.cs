@@ -7,36 +7,34 @@ namespace Listings
 {
     class Item_02 //FileStream and IDisposable
     {
-        static void XMain()
+        static void XMain(string[] args)
         {
-            // Gravando no arquivo
+            // GRAVANDO UM ARQUIVO
 
-            //FileStream fluxoSaida = new FileStream("ArquivoSaida.txt",
-            //    FileMode.OpenOrCreate, FileAccess.Write);
-            //string mensagemSaida = "Olá, Alura!";
+            FileStream fluxoSaida
+                = new FileStream("ArquivoSaida.txt", FileMode.Create, FileAccess.Write);
 
-            //var bytesMensagemSaida = Encoding.UTF8.GetBytes(mensagemSaida);
-            //fluxoSaida.Write(bytesMensagemSaida, 0, bytesMensagemSaida.Length);
-            //fluxoSaida.Close();
+            string mensagemSaida = "Olá, Alura!";
 
-            using (FileStream fluxoSaida = new FileStream("ArquivoSaida.txt", FileMode.OpenOrCreate, FileAccess.Write))
-            {
-                string mensagemSaida = "Olá, Alura!";
-                byte[] bytesMensagemSaida = Encoding.UTF8.GetBytes(mensagemSaida);
-                fluxoSaida.Write(bytesMensagemSaida, 0, bytesMensagemSaida.Length);
-            }
+            byte[] array = Encoding.UTF8.GetBytes(mensagemSaida);
+            int posicao = 0;
+            int tamanho = mensagemSaida.Length;
+            fluxoSaida.Write(array, posicao, tamanho);
+            fluxoSaida.Close();
 
-            FileStream fluxoEntrada = new FileStream("ArquivoSaida.txt", FileMode.Open, FileAccess.Read);
+            FileStream fluxoEntrada
+                = new FileStream("ArquivoSaida.txt",
+                    FileMode.Open, FileAccess.Read);
 
-            long tamanhoArquivo = fluxoEntrada.Length;
-            var bytesLidos = new byte[tamanhoArquivo];
-            fluxoEntrada.Read(bytesLidos, 0, (int)tamanhoArquivo);
+            byte[] bytesLidos = new byte[fluxoEntrada.Length];
+
+            fluxoEntrada.Read(bytesLidos, posicao, (int)fluxoEntrada.Length);
             string texto = Encoding.UTF8.GetString(bytesLidos);
             fluxoEntrada.Close();
-            Console.WriteLine("Mensagem lida: {0}", texto);
+
+            Console.WriteLine("Mensagem Lida: " + texto);
 
             Console.ReadKey();
-
         }
     }
 }
