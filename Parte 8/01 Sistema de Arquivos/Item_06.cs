@@ -7,7 +7,7 @@ namespace Listings
 {
     class Item_06 //Stream exceptions
     {
-        static void XMain(string[] args)
+        static void Main(string[] args)
         {
             try
             {
