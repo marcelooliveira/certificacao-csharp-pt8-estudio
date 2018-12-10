@@ -6,35 +6,21 @@ using System.Text;
 
 namespace Listings
 {
-    class Item_04 //Storing compressed files
+    class Item_04 //Trabalhando com arquivos comprimidos
     {
         static void XMain(string[] args)
         {
-            using (FileStream fluxoArquivo = new FileStream("Texto.zip", FileMode.OpenOrCreate,
-                FileAccess.Write))
+            using (StreamWriter gravadorFluxo = new StreamWriter("ArquivoSaida.txt"))
             {
-                using (GZipStream fluxoZip = new GZipStream(fluxoArquivo, CompressionMode.Compress))
-                {
-                    using (StreamWriter gravadorFluxo = new StreamWriter(fluxoZip))
-                    {
-                        gravadorFluxo.Write("Olá, Alura!");
-                    }
-                }
+                gravadorFluxo.Write("Olá, Alura! (gravado com StreamWriter)");
             }
 
-            using (FileStream fluxoArquivo = new FileStream("Texto.zip", FileMode.Open, FileAccess.Read))
+            using (StreamReader leitorFluxo = new StreamReader("ArquivoSaida.txt"))
             {
-                using (GZipStream fluxoZip = new GZipStream(fluxoArquivo, CompressionMode.Decompress))
-                {
-                    using (StreamReader leitorFluxo = new StreamReader(fluxoZip))
-                    {
-                        string mensagem = leitorFluxo.ReadToEnd();
-                        Console.WriteLine("Texto lido: {0}", mensagem);
-                    }
-                }
+                string textoLido = leitorFluxo.ReadToEnd();
+                Console.WriteLine("Texto lido: {0}", textoLido);
+                Console.ReadKey();
             }
-
-            Console.ReadKey();
         }
     }
 }
