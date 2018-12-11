@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Listings
 {
@@ -6,7 +7,13 @@ namespace Listings
     {
         static void Main(string[] args)
         {
-
+            //TAREFA:
+            //=======
+            //Nome do drive
+            //Verificar se o drive está pronto
+            //Tipo do drive
+            //Formato do drive
+            //Espaço livre, em bytes, MB, GB e TB
         }
     }
 }
