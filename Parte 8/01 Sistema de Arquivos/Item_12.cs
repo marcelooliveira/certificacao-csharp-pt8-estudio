@@ -5,30 +5,14 @@ using System.Text;
 
 namespace Listings
 {
-    class Item_12 //Csharp programs
+    class Item_12 //Procurando e listando arquivos
     {
-        static void XMain(string[] args)
+        static void Main(string[] args)
         {
-            DirectoryInfo diretorioInicio = new DirectoryInfo(@"..\..\..\..");
-
-            string padraoBusca = "*.cs";
-            EncontrarArquivos(diretorioInicio, padraoBusca);
-            Console.ReadKey();
+            //TAREFAS:
+            //Obter o diretório de início do projeto
+            //Listar todos os diretórios do projeto
+            //Listar todos os arquivos csharp (.cs) do projeto
         }
-
-        static void EncontrarArquivos(DirectoryInfo dir, string padraoBusca)
-        {
-            foreach (DirectoryInfo diretorio in dir.GetDirectories())
-            {
-                EncontrarArquivos(diretorio, padraoBusca);
-            }
-
-            FileInfo[] arquivosEncontrados = dir.GetFiles(padraoBusca);
-            foreach (FileInfo fileInfo in arquivosEncontrados)
-            {
-                Console.WriteLine(fileInfo.FullName);
-            }
-        }
-
     }
 }
