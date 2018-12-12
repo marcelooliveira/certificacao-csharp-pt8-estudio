@@ -7,7 +7,7 @@ namespace Listings
 {
     class Item_08 //Informações de arquivo
     {
-        static void Main(string[] args)
+        static void XMain(string[] args)
         {
             const string caminho = "Arquivo.txt";
             //TAREFA:

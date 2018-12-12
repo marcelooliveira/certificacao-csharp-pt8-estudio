@@ -5,17 +5,14 @@ using System.Text;
 
 namespace Listings
 {
-    class Item_09 //The Directory class
+    class Item_09 //A Classe Directory
     {
-        static void XMain(string[] args)
+        static void Main(string[] args)
         {
-            Directory.CreateDirectory("NovoDiretorio");
-            if (Directory.Exists("NovoDiretorio"))
-                Console.WriteLine("Diretório criado com sucesso");
-
-            Directory.Delete("NovoDiretorio");
-
-            Console.WriteLine("Diretório removido com sucesso");
+            //TAREFA:
+            //Criar um novo diretório
+            //Verificar se ele foi criado
+            //Apagar o diretório que foi criado
         }
     }
 }
