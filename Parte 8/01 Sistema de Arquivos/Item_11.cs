@@ -10,8 +10,8 @@ namespace Listings
         static void Main(string[] args)
         {
             //TAREFAS:
-            //Descobrir o caminho da pasta "Documentos"
-            //Combinar caminho da pasta "Documentos" com arquivo "alura.txt"
+            //Descobrir o caminho da pasta "Meus Documentos"
+            //Combinar caminho da pasta "Meus Documentos" com arquivo "alura.txt"
             //Obter somente o nome do diretório do arquivo
             //Obter somente o nome do arquivo
             //Obter a extensão do arquivo
