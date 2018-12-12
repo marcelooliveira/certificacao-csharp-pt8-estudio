@@ -7,7 +7,7 @@ namespace Listings
     {
         private const int KILOBYTE = 1024;
 
-        static void Main(string[] args)
+        static void XMain(string[] args)
         {
             //TAREFA:
             //=======

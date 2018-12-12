@@ -5,24 +5,22 @@ using System.Text;
 
 namespace Listings
 {
-    class Item_08 //Using FileInfo
+    class Item_08 //Informações de arquivo
     {
-        static void XMain(string[] args)
+        static void Main(string[] args)
         {
-            string filePath = "Arquivo.txt";
-            File.WriteAllText(path: filePath, contents: "Texto inicial do arquivo");
-            FileInfo info = new FileInfo(filePath);
-            Console.WriteLine("Nome {0}", info.Name);
-            Console.WriteLine("Caminho completo: {0}", info.FullName);
-            Console.WriteLine("Último acesso: {0}", info.LastAccessTime);
-            Console.WriteLine("Tamanho: {0}", info.Length);
-            Console.WriteLine("Atributos: {0}", info.Attributes);
-            Console.WriteLine("Tornar o arquivo somente-leitura");
-            info.Attributes |= FileAttributes.ReadOnly;
-            Console.WriteLine("Atributos: {0}", info.Attributes);
-            Console.WriteLine("Remover o arquivo somente-leitura");
-            info.Attributes &= ~FileAttributes.ReadOnly;
-            Console.WriteLine("Atributos: {0}", info.Attributes);
+            //TAREFA:
+            //1. Gravar um texto em Arquivo.txt
+            //2. Obter informações desse arquivo:
+            //      Nome
+            //      Caminho completo (diretório + nome do arquivo)
+            //      Data e hora do último acesso
+            //      Tamanho do arquivo (bytes)
+            //      Atributos do arquivo
+            //      Adicionar atributo somente-leitura
+            //      Verificar os atributos novamente
+            //      Remover atributo somente-leitura
+            //      Verificar os atributos novamente
         }
     }
 }
