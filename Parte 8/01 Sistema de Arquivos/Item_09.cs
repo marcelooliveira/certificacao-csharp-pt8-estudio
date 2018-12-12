@@ -9,7 +9,7 @@ namespace Listings
     {
         private const string NomeDiretorio = "NovoDiretorio";
 
-        static void Main(string[] args)
+        static void XMain(string[] args)
         {
             //TAREFA:
             //Criar um novo diretório

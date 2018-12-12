@@ -5,16 +5,16 @@ using System.Text;
 
 namespace Listings
 {
-    class Item_10 //The Directorylnfo class
+    class Item_10 //A classe Directorylnfo
     {
-        static void XMain(string[] args)
+        static void Main(string[] args)
         {
-            DirectoryInfo localDir = new DirectoryInfo("NovoDiretorio");
-            localDir.Create();
-            if (localDir.Exists)
-                Console.WriteLine("Diretório criado com sucesso");
-            localDir.Delete();
-            Console.WriteLine("Diretório removido com sucesso");
+            //TAREFA:
+            //Criar um novo diretório
+            //Verificar se ele foi criado
+            //Exibir os atributos do diretório
+            //Exibir último acesso
+            //Apagar o diretório que foi criado
         }
     }
 }
