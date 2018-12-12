@@ -5,24 +5,17 @@ using System.Text;
 
 namespace Listings
 {
-    class Item_11 //Using Path
+    class Item_11 //Trabalhando com caminhos
     {
-        static void XMain(string[] args)
+        static void Main(string[] args)
         {
-            string documentoDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string nomeCompleto = documentoDir + "\\test.txt";
-
-            string nomeDir = Path.GetDirectoryName(nomeCompleto);
-            string nomeArquivo = Path.GetFileName(nomeCompleto);
-            string extensao = Path.GetExtension(nomeCompleto);
-            string extensaoXyz = Path.ChangeExtension(nomeCompleto, ".xyz");
-            string novoTeste = Path.Combine(nomeDir, "novoTeste.txt");
-            Console.WriteLine("Nome completo: {0}", nomeCompleto);
-            Console.WriteLine("Diretorio: {0}", nomeDir);
-            Console.WriteLine("Nome do arquivo: {0}", nomeArquivo);
-            Console.WriteLine("Extensão do arquivo: {0}", extensao);
-            Console.WriteLine("Arquivo com extensão xyz: {0}", extensaoXyz);
-            Console.WriteLine("Novo teste: {0}", novoTeste);
+            //TAREFAS:
+            //Descobrir o caminho da pasta "Documentos"
+            //Combinar caminho da pasta "Documentos" com arquivo "alura.txt"
+            //Obter somente o nome do diretório do arquivo
+            //Obter somente o nome do arquivo
+            //Obter a extensão do arquivo
+            //Modificar a extensão do arquivo
         }
     }
 }
