@@ -16,7 +16,7 @@ namespace Listings
             //de forma ASSÍNCRONA
 
             WebClient webClient = new WebClient();
-            string textoDoSite = webClient.DownloadString("http://www.caelum.com.br");
+            var textoDoSite = webClient.DownloadString("http://www.caelum.com.br");
             Console.WriteLine(textoDoSite);
             Console.ReadKey();
         }
