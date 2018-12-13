@@ -8,24 +8,12 @@ namespace Listings
 {
     class Item_16 //HttpClient
     {
-        static async Task XMain(string[] args)
+        static void Main(string[] args)
         {
-            try
-            {
-                string textoWeb = await LerPaginaWeb("http://www.caelum.com.br");
-                Console.WriteLine(textoWeb);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine("Requisição falhou");
-            }
-        }
-
-        static async Task<string> LerPaginaWeb(string uri)
-        {
-            HttpClient cliente = new HttpClient();
-            return await cliente.GetStringAsync(uri);
+            //TAREFA:
+            //Conectar-se site da caelum (http://www.caelum.com.br)
+            //de forma ASSÍNCRONA, porém o código precisa rodar em 
+            //Windows Universal Application Platform
         }
     }
 }
