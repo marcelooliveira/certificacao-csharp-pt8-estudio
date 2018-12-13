@@ -8,16 +8,12 @@ namespace Listings
 {
     class Item_13 //HttpWebRequest
     {
-        static void XMain(string[] args)
+        static void Main(string[] args)
         {
-            WebRequest requisicao = WebRequest.Create("http://www.caelum.com.br");
-            WebResponse resposta = requisicao.GetResponse();
-            using (StreamReader leitorResposta =
-                new StreamReader(resposta.GetResponseStream()))
-            {
-                string textoDoSite = leitorResposta.ReadToEnd();
-                Console.WriteLine(textoDoSite);
-            }
+            //TAREFAS:
+            //1) conectar-se site da caelum (http://www.caelum.com.br)
+            //2) obter o conteúdo da página do site
+            //3) exibir o conteúdo da página
         }
     }
 }

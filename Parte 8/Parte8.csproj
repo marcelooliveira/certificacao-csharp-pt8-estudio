@@ -7,21 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="02 Web\**" />
     <Compile Remove="03 Async\**" />
     <Compile Remove="04 Banco de Dados\**" />
     <Compile Remove="05 JSON e XML\**" />
     <Compile Remove="06 Serviços Web\**" />
-    <EmbeddedResource Remove="02 Web\**" />
     <EmbeddedResource Remove="03 Async\**" />
     <EmbeddedResource Remove="04 Banco de Dados\**" />
     <EmbeddedResource Remove="05 JSON e XML\**" />
     <EmbeddedResource Remove="06 Serviços Web\**" />
-    <None Remove="02 Web\**" />
     <None Remove="03 Async\**" />
     <None Remove="04 Banco de Dados\**" />
     <None Remove="05 JSON e XML\**" />
     <None Remove="06 Serviços Web\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="02 Web\Item_14.cs" />
+    <Compile Remove="02 Web\Item_15.cs" />
+    <Compile Remove="02 Web\Item_16.cs" />
   </ItemGroup>
 
   <ItemGroup>
