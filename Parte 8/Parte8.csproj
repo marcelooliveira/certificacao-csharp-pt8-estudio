@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="02 Web\Item_15.cs" />
     <Compile Remove="02 Web\Item_16.cs" />
   </ItemGroup>
 

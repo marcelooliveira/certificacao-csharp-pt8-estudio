@@ -8,16 +8,17 @@ namespace Listings
 {
     class Item_15 //WebClient async
     {
-        static async Task XMain(string[] args)
+        static void Main(string[] args)
         {
-            string textoDoSite = await LerPaginaWeb("http://www.caelum.com.br");
-            Console.WriteLine(textoDoSite);
-        }
+            //TAREFA:
+            //Conectar-se site da caelum (http://www.caelum.com.br)
+            //apenas para obter e exibir o conteúdo da página do site
+            //de forma ASSÍNCRONA
 
-        static async Task<string> LerPaginaWeb(string uri)
-        {
-            WebClient cliente = new WebClient();
-            return await cliente.DownloadStringTaskAsync(uri);
+            WebClient webClient = new WebClient();
+            string textoDoSite = webClient.DownloadString("http://www.caelum.com.br");
+            Console.WriteLine(textoDoSite);
+            Console.ReadKey();
         }
     }
 }
