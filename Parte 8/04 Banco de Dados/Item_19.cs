@@ -7,35 +7,20 @@ using System.Threading.Tasks;
 
 namespace Listings
 {
-    class Item_19 //Read With SQL
+    class Item_19 //Ler Dados com SQL
     {
-        private const string DatabaseServer = "(LocalDB)\\MSSQLLocalDB";
+        private const string DatabaseServer = "";
         private const string MasterDatabase = "master";
         private const string DatabaseName = "Cinema";
 
-        static async Task XMain(string[] args)
+        static async Task Main(string[] args)
         {
             await CriarBancoDeDadosAsync();
 
-            string connectionString = $"Server={DatabaseServer};Integrated security=SSPI;database={DatabaseName}";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand(
-                    " SELECT d.Nome AS Diretor, f.Titulo AS Titulo" +
-                    " FROM Filmes AS f" +
-                    " INNER JOIN Diretores AS d" +
-                    "   ON d.Id = f.DiretorId"
-                    , connection);
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    string diretor = reader["Diretor"].ToString();
-                    string titulo = reader["Titulo"].ToString();
-                    Console.WriteLine("Diretor: {0} Titulo: {1}", diretor, titulo);
-                }
-            }
+            //TAREFAS:
+            //1. ABRIR UMA CONEXÃO COM O BANCO DE DADOS
+            //2. CRIAR UMA CONSULTA PARA TRAZER DIRETOR E TÍTULO DO FILME
+            //3. LER E EXIBIR OS RESULTADOS DA CONSULTA
 
             Console.ReadKey();
         }
@@ -96,6 +81,11 @@ namespace Listings
 
         private static async Task ExecutarComandoAsync(string sql, string banco)
         {
+            if (string.IsNullOrWhiteSpace(DatabaseServer))
+            {
+                throw new Exception("DatabaseServer precisa ser definido!");
+            }
+
             SqlConnection conexao = new SqlConnection($"Server={DatabaseServer};Integrated security=SSPI;database={banco}");
             SqlCommand comando = new SqlCommand(sql, conexao);
             try
