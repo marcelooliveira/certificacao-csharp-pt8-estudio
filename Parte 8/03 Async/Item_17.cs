@@ -8,7 +8,7 @@ namespace Listings
 {
     class Item_17 //Acesso assíncrono a arquivos
     {
-        static void Main(string[] args)
+        static void XMain(string[] args)
         {
             //TAREFA:   IMPLEMENTAR ACESSO ASSÍNCRONO A ARQUIVOS,
             //          TANTO NA LEITURA QUANTO NA GRAVAÇÃO

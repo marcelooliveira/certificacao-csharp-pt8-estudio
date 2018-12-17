@@ -8,13 +8,16 @@ namespace Listings
 {
     class Item_18 //File exceptions
     {
-        static async Task XMain(string[] args)
+        static void Main(string[] args)
         {
+            //TAREFA: CAPTURAR A EXCEÇÃO 
+            //GERADA POR UM MÉTODO ASSÍNCRONO
+
             byte[] dados = new byte[100];
             try
             {
                 // nome do arquivo com caractere inválido ">"
-                await GravarBytesAsync("destino>.dat", dados);
+                GravarBytesAsync("destino>.dat", dados);
             }
             catch (Exception writeException)
             {
@@ -23,7 +26,7 @@ namespace Listings
             }
         }
 
-        static async Task GravarBytesAsync(string nomeArquivo, byte[] items)
+        static async void GravarBytesAsync(string nomeArquivo, byte[] items)
         {
             using (FileStream fluxoSaida = new FileStream(nomeArquivo, FileMode.OpenOrCreate, FileAccess.Write))
             {

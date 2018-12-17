@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <Compile Include="03 Async\Item_17.cs" />
+    <Compile Include="03 Async\Item_18.cs" />
   </ItemGroup>
 
   <ItemGroup>
