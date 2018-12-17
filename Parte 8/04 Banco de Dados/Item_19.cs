@@ -22,6 +22,12 @@ namespace Listings
             //2. CRIAR UMA CONSULTA PARA TRAZER DIRETOR E TÍTULO DO FILME
             //3. LER E EXIBIR OS RESULTADOS DA CONSULTA
 
+            const string ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Cinema;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            using (var conexao = new SqlConnection(ConnectionString))
+            {
+                await conexao.OpenAsync();
+            }
+
             Console.ReadKey();
         }
 
