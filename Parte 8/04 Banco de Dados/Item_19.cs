@@ -9,7 +9,7 @@ namespace Listings
 {
     class Item_19 //Ler Dados com SQL
     {
-        private const string DatabaseServer = "";
+        private const string DatabaseServer = @"(localdb)\MSSQLLocalDB";
         private const string MasterDatabase = "master";
         private const string DatabaseName = "Cinema";
 
