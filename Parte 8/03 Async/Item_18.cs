@@ -24,6 +24,7 @@ namespace Listings
                 Console.WriteLine(writeException.Message);
                 Console.WriteLine("escrita falhou");
             }
+            Console.Read();
         }
 
         static async void GravarBytesAsync(string nomeArquivo, byte[] items)
