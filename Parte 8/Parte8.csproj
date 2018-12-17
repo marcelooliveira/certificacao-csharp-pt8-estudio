@@ -29,6 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="03 Async\Item_17.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Diretores.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
