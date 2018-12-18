@@ -9,11 +9,19 @@ namespace Listings
 {
     class Item_25 //Json
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             //TAREFA:
-            //CONSULTAR UM CEP NO SITE http://viacep.com.br
+            //CONSULTAR OS DADOS DO CEP 04101-300
+            //NO SERVIÇO DA http://viacep.com.br
             //E EXIBIR SEUS DADOS
+
+            Console.WriteLine(
+                $"Logradouro: " +
+                $"\nBairro: " +
+                $"\nMunicípio: " +
+                $"\nUF: " +
+                $"\nCEP: ");
 
             Console.ReadKey();
         }
