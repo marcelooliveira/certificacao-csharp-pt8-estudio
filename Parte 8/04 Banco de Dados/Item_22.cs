@@ -31,8 +31,12 @@ namespace Listings
                 string filmeId = Console.ReadLine();
                 Console.Write("Digite o novo título do filme: ");
                 string novoTitulo = Console.ReadLine();
-                string textoComando = "UPDATE Filmes SET Titulo='" + novoTitulo + "' WHERE Id = '" + filmeId + "'";
+                string textoComando = "UPDATE Filmes SET Titulo=@novoTitulo WHERE Id = @filmeId";
                 SqlCommand command = new SqlCommand(textoComando, connection);
+
+                command.Parameters.AddWithValue("@novoTitulo", novoTitulo);
+                command.Parameters.AddWithValue("@filmeId", filmeId);
+
                 int result = command.ExecuteNonQuery();
 
                 Console.WriteLine("Número de linhas atualizadas: {0}", result);
