@@ -17,6 +17,20 @@ namespace Listings
                     "<Minutos>154</Minutos>" +
                 "</Filme>";
 
+    //        string xmlText =
+    //"<Filmes>" +
+    //    "<Filme>" +
+    //        "<Diretor>Quentin Tarantino</Diretor>" +
+    //        "<Titulo>Pulp Fiction</Titulo>" +
+    //        "<Minutos>154</Minutos>" +
+    //    "</Filme>" +
+    //    "<Filme>" +
+    //        "<Diretor>James Cameron</Diretor>" +
+    //        "<Titulo>Avatar</Titulo>" +
+    //        "<Minutos>162</Minutos>" +
+    //    "</Filme>" +
+    //"</Filmes>";
+
             using (StringReader stringReader = new StringReader(xmlDocument))
             {
                 XmlTextReader reader = new XmlTextReader(stringReader);

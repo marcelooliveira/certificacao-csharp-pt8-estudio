@@ -21,8 +21,8 @@ namespace Listings
 
         static async Task<Endereco> GetEndereco(string url)
         {
-            string NASAJson = await LerPaginaWeb(url);
-            return JsonConvert.DeserializeObject<Endereco>(NASAJson);
+            string json = await LerPaginaWeb(url);
+            return JsonConvert.DeserializeObject<Endereco>(json);
         }
 
         static async Task<string> LerPaginaWeb(string uri)
