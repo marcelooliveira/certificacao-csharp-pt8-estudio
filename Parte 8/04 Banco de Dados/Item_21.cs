@@ -13,7 +13,7 @@ namespace Listings
         private const string MasterDatabase = "master";
         private const string DatabaseName = "Cinema";
 
-        static async Task XMain(string[] args)
+        static async Task Main(string[] args)
         {
             await CriarBancoDeDadosAsync();
 
@@ -22,13 +22,19 @@ namespace Listings
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                await ListarFilmes(connection);
 
-                SqlCommand command = new SqlCommand(
-                "UPDATE Diretores SET Nome ='QUENTIN TARANTINO' WHERE Id = 1", connection);
-                int result = command.ExecuteNonQuery();
+                //TAREFA:
+                //1. Mudar o nome do primeiro diretor para "Quentin Tarantino"
+                //2. Contar quantas linhas foram atualizadas
 
-                Console.WriteLine("Número de linhas atualizadas: {0}", result);
+                var sql = "UPDATE Diretores SET Nome = 'Quentin Tarantino' WHERE Id = 1";
+                using (var comando = new SqlCommand(sql, connection))
+                {
+                    var linhas = await comando.ExecuteNonQueryAsync();
+
+                    Console.WriteLine("Número de linhas atualizadas: {0}", linhas);
+                }
+
                 await ListarFilmes(connection);
             }
 
@@ -39,7 +45,7 @@ namespace Listings
         static async Task ListarFilmes(SqlConnection connection)
         {
             SqlCommand command = new SqlCommand(
-                " SELECT d.Nome AS Diretor, f.Titulo AS Titulo" +
+                " SELECT d.Id AS DiretorId, d.Nome AS Diretor, f.Titulo AS Titulo" +
                 " FROM Filmes AS f" +
                 " INNER JOIN Diretores AS d" +
                 "   ON d.Id = f.DiretorId"
@@ -48,9 +54,10 @@ namespace Listings
 
             while (await reader.ReadAsync())
             {
+                string diretorId = reader["DiretorId"].ToString();
                 string diretor = reader["Diretor"].ToString();
                 string titulo = reader["Titulo"].ToString();
-                Console.WriteLine("Diretor: {0} Titulo: {1}", diretor, titulo);
+                Console.WriteLine("DiretorId: {0}, Nome: {1}, Título: {2}", diretorId, diretor, titulo);
             }
             reader.Close();
         }
@@ -93,7 +100,7 @@ namespace Listings
         private static async Task InserirRegistrosAsync()
         {
             string sql = @"
-                    INSERT Diretores (Nome) VALUES ('Quentin Tarantino');
+                    INSERT Diretores (Nome) VALUES ('Quentin Jerome Tarantino');
                     INSERT Diretores (Nome) VALUES ('James Cameron');
                     INSERT Diretores (Nome) VALUES ('Tim Burton');
 

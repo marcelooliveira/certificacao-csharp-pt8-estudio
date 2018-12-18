@@ -32,6 +32,7 @@
     <Compile Include="03 Async\Item_17.cs" />
     <Compile Include="03 Async\Item_18.cs" />
     <Compile Include="04 Banco de Dados\Item_19.cs" />
+    <Compile Include="04 Banco de Dados\Item_21.cs" />
   </ItemGroup>
 
   <ItemGroup>

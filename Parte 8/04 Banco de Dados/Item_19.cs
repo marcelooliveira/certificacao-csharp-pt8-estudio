@@ -13,7 +13,7 @@ namespace Listings
         private const string MasterDatabase = "master";
         private const string DatabaseName = "Cinema";
 
-        static async Task Main(string[] args)
+        static async Task XMain(string[] args)
         {
             await CriarBancoDeDadosAsync();
 
@@ -34,7 +34,7 @@ namespace Listings
                                     ON d.Id = f.DiretorId", conexao))
                 {
                     var leitor = await comando.ExecuteReaderAsync();
-                    while(await leitor.ReadAsync())
+                    while (await leitor.ReadAsync())
                     {
                         var diretor = leitor["Diretor"];
                         var titulo = leitor["Titulo"];
