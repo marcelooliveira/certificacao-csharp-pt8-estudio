@@ -14,7 +14,7 @@ namespace Listings
         private const string MasterDatabase = "master";
         private const string DatabaseName = "Cinema";
 
-        static async Task XMain(string[] args)
+        static async Task Main(string[] args)
         {
             await CriarBancoDeDadosAsync();
 
@@ -25,11 +25,13 @@ namespace Listings
                 connection.Open();
                 await ListarFilmes(connection);
 
-                Console.Write("Digite o título do filme a ser alterado: ");
-                string titulo = Console.ReadLine();
+                //TAREFA: EVITAR A TÉCNICA DE SQL INJECTION
+
+                Console.Write("Digite o Id do filme a ser alterado: ");
+                string filmeId = Console.ReadLine();
                 Console.Write("Digite o novo título do filme: ");
                 string novoTitulo = Console.ReadLine();
-                string textoComando = "UPDATE Filmes SET Titulo='" + novoTitulo + "' WHERE Titulo = '" + titulo + "'";
+                string textoComando = "UPDATE Filmes SET Titulo='" + novoTitulo + "' WHERE Id = '" + filmeId + "'";
                 SqlCommand command = new SqlCommand(textoComando, connection);
                 int result = command.ExecuteNonQuery();
 
@@ -44,7 +46,7 @@ namespace Listings
         static async Task ListarFilmes(SqlConnection connection)
         {
             SqlCommand command = new SqlCommand(
-                " SELECT d.Nome AS Diretor, f.Titulo AS Titulo" +
+                " SELECT d.Nome AS Diretor, f.Id, f.Titulo AS Titulo" +
                 " FROM Filmes AS f" +
                 " INNER JOIN Diretores AS d" +
                 "   ON d.Id = f.DiretorId"
@@ -54,8 +56,9 @@ namespace Listings
             while (await reader.ReadAsync())
             {
                 string diretor = reader["Diretor"].ToString();
+                string filmeId = reader["Id"].ToString();
                 string titulo = reader["Titulo"].ToString();
-                Console.WriteLine("Diretor: {0} Titulo: {1}", diretor, titulo);
+                Console.WriteLine("Diretor: {0}, Titulo: {1}-{2}", diretor, filmeId, titulo);
             }
             reader.Close();
         }
@@ -107,9 +110,9 @@ namespace Listings
                     INSERT Filmes (DiretorId, Titulo, Ano, Minutos) VALUES (1, 'Kill Bill Volume 1', 2003,	111);
                     INSERT Filmes (DiretorId, Titulo, Ano, Minutos) VALUES (2, 'Avatar', 2009,	162);
                     INSERT Filmes (DiretorId, Titulo, Ano, Minutos) VALUES (2, 'Titanic', 1997,	194);
-                    INSERT Filmes (DiretorId, Titulo, Ano, Minutos) VALUES (2, 'O Exterminador do Futuro', 1984,	107);
+                    INSERT Filmes (DiretorId, Titulo, Ano, Minutos) VALUES (2, 'O Exterminador', 1984,	107);
                     INSERT Filmes (DiretorId, Titulo, Ano, Minutos) VALUES (3, 'O Estranho Mundo de Jack', 1993,	76);
-                    INSERT Filmes (DiretorId, Titulo, Ano, Minutos) VALUES (3, 'Alice no País das Maravilhas', 2010,	108);
+                    INSERT Filmes (DiretorId, Titulo, Ano, Minutos) VALUES (3, 'Alice', 2010,	108);
                     INSERT Filmes (DiretorId, Titulo, Ano, Minutos) VALUES (3, 'A Noiva Cadáver', 2005,	77);
                     INSERT Filmes (DiretorId, Titulo, Ano, Minutos) VALUES (3, 'A Fantástica Fábrica de Chocolate', 2005,	115);";
             await ExecutarComandoAsync(sql, DatabaseName);
