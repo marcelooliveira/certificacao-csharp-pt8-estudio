@@ -1,22 +1,16 @@
-﻿using ServiceReference1;
-using System;
-using System.Collections.Generic;
-using System.ServiceModel;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
 
 namespace Listings
 {
     class Item_28 //Web Service
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
-            using (MeuServicoClient servicoClient = new MeuServicoClient())
-            {
-                var nomeCurso = await servicoClient.GetValorAsync(1);
-                Console.WriteLine(nomeCurso);
-            }
-            Console.ReadKey();
+            //TAREFA:
+            //1. ADICIONAR UMA REFERÊNCIA A UM SERVIÇO
+            //      WCF (WINDOWS COMMUNICATION FOUNDATION)
+            //2. CONSUMIR O SERVIÇO E EXIBIR OS CURSOS DE NÚMERO 1 A 15
         }
     }
 }
