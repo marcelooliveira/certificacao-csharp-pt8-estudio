@@ -36,6 +36,7 @@
     <Compile Include="04 Banco de Dados\Item_22.cs" />
     <Compile Include="05 JSON e XML\Item_25.cs" />
     <Compile Include="05 JSON e XML\Item_26.cs" />
+    <Compile Include="06 Serviços Web\Item_28.cs" />
   </ItemGroup>
 
   <ItemGroup>
