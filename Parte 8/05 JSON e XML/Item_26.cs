@@ -8,39 +8,35 @@ namespace Listings
 {
     class Item_26 // XML elements
     {
-        static void XMain(string[] args)
+        static void Main(string[] args)
         {
-            string xmlDocument =
-                "<Filme>" +
+            //TAREFA:
+            //1. LER UMA STRING CONTENDO DOCUMENTO XML:
+            //      - DECLARAÇÃO XML
+            //      - ELEMENTOS
+            //      - TEXTOS
+            //      - ATRIBUTOS
+            //2. INTERPRETAR CADA NÓ DA ESTRUTURA XML:
+            //      - TIPO
+            //      - NOME
+            //      - VALOR
+
+            string xml =
+            "<?xml version=\"1.0\" encoding=\"utf-16\"?>" +
+            "<Filmes>" +
+                "<Filme Genero=\"Policial\">" +
                     "<Diretor>Quentin Tarantino</Diretor>" +
                     "<Titulo>Pulp Fiction</Titulo>" +
                     "<Minutos>154</Minutos>" +
-                "</Filme>";
+                "</Filme>" +
+                "<Filme Genero=\"Ficção Científica\">" +
+                    "<Diretor>James Cameron</Diretor>" +
+                    "<Titulo>Avatar</Titulo>" +
+                    "<Minutos>162</Minutos>" +
+                "</Filme>" +
+            "</Filmes>";
 
-    //        string xmlText =
-    //"<Filmes>" +
-    //    "<Filme>" +
-    //        "<Diretor>Quentin Tarantino</Diretor>" +
-    //        "<Titulo>Pulp Fiction</Titulo>" +
-    //        "<Minutos>154</Minutos>" +
-    //    "</Filme>" +
-    //    "<Filme>" +
-    //        "<Diretor>James Cameron</Diretor>" +
-    //        "<Titulo>Avatar</Titulo>" +
-    //        "<Minutos>162</Minutos>" +
-    //    "</Filme>" +
-    //"</Filmes>";
-
-            using (StringReader stringReader = new StringReader(xmlDocument))
-            {
-                XmlTextReader reader = new XmlTextReader(stringReader);
-                while (reader.Read())
-                {
-                    string description = string.Format("Type: {0} Name: {1} Value: {2}",
-                        reader.NodeType.ToString(), reader.Name, reader.Value);
-                    Console.WriteLine(description);
-                }
-            }
+            Console.ReadKey();
         }
     }
 }
