@@ -10,15 +10,15 @@
     <Compile Remove="03 Async\**" />
     <Compile Remove="04 Banco de Dados\**" />
     <Compile Remove="05 JSON e XML\**" />
-    <Compile Remove="06 Serviços Web\**" />
+    <Compile Remove="06 Serviços WCF\**" />
     <EmbeddedResource Remove="03 Async\**" />
     <EmbeddedResource Remove="04 Banco de Dados\**" />
     <EmbeddedResource Remove="05 JSON e XML\**" />
-    <EmbeddedResource Remove="06 Serviços Web\**" />
+    <EmbeddedResource Remove="06 Serviços WCF\**" />
     <None Remove="03 Async\**" />
     <None Remove="04 Banco de Dados\**" />
     <None Remove="05 JSON e XML\**" />
-    <None Remove="06 Serviços Web\**" />
+    <None Remove="06 Serviços WCF\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,7 +36,7 @@
     <Compile Include="04 Banco de Dados\Item_22.cs" />
     <Compile Include="05 JSON e XML\Item_25.cs" />
     <Compile Include="05 JSON e XML\Item_26.cs" />
-    <Compile Include="06 Serviços Web\Item_28.cs" />
+    <Compile Include="06 Serviços WCF\Item_28.cs" />
   </ItemGroup>
 
   <ItemGroup>
